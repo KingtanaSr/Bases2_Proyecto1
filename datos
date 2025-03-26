@@ -1,1 +1,19 @@
+insert into provincias (nombre_provincia) values ('Alajuela');
+insert into provincias (nombre_provincia) values ('Heredia');
+insert into provincias (nombre_provincia) values ('Guanacaste');
+insert into provincias (nombre_provincia) values ('Limon');
+insert into provincias (nombre_provincia) values ('San Jose');
+insert into provincias (nombre_provincia) values ('Puntarenas');
+insert into provincias (nombre_provincia) values ('Cartago');
 
+
+insert into producto (nombre, cantidad, precio) values ('Leche', 12, 2300);
+insert into producto (nombre, cantidad, precio) values ('Jabon', 20, 700);
+insert into producto (nombre, cantidad, precio) values ('Oreo', 23, 1700);
+insert into producto (nombre, cantidad, precio) values ('Chiki', 30, 2400);
+insert into producto (nombre, cantidad, precio) values ('Chicle', 10, 900);
+insert into producto (nombre, cantidad, precio) values ('Fresa', 9, 3000);
+insert into producto (nombre, cantidad, precio) values ('Manzana', 30, 500);
+insert into producto (nombre, cantidad, precio) values ('Coca-Cola', 25, 1200);
+insert into producto (nombre, cantidad, precio) values ('Sandia', 5, 1500);
+insert into producto (nombre, cantidad, precio) values ('Pan Molido', 20, 700);
