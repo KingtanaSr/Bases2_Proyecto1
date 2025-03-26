@@ -66,3 +66,7 @@ create table proveedor_producto(
     id_proveedor number not null,
     CONSTRAINT fk_proveedor FOREIGN KEY (id_producto) REFERENCES producto(id_producto),
     CONSTRAINT fk_producto FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor));
+
+create table usuarios (
+    nombre_usuario varchar2(10) unique not null,
+    contraseña varchar(8) not null);
