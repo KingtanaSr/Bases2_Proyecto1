@@ -70,3 +70,9 @@ create table proveedor_producto(
 create table usuarios (
     nombre_usuario varchar2(10) unique not null,
     contraseña varchar(8) not null);
+
+
+create table bitacora (
+    id_bitacora NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    fecha_hora TIMESTAMP not null,
+    precio_anterior number not null);
