@@ -6,7 +6,9 @@ declare
 begin 
     id_prod := :new.id_producto;
     if :new.cantidad>5 then 
+        insert into bitacora (fecha_hora, precio_anterior) values (SYSDATE, (SELECT precio FROM producto WHERE id_producto = id_prod));
         update producto set precio = precio * 5 where id_producto = id_prod;
+        
     end if;
 end;
 /
