@@ -1,1 +1,12 @@
-
+create or replace trigger actualizar_precio_producto
+before insert on fact_producto
+for each row
+declare 
+    id_prod number;
+begin 
+    id_prod := :new.id_producto;
+    if :new.cantidad>5 then 
+        update producto set precio = precio * 5 where id_producto = id_prod;
+    end if;
+end;
+/
