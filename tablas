@@ -1,24 +1,24 @@
 CREATE TABLE Provincias (
-    ID_Provincia NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    ID_Provincia NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre_provincia VARCHAR2(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE Cantones (
-    ID_Canton NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    ID_Canton NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre VARCHAR2(100) NOT NULL,
     ID_Provincia NUMBER NOT NULL,
     CONSTRAINT fk_provincia FOREIGN KEY (ID_Provincia) REFERENCES Provincias(ID_Provincia)
 );
 
 create table sucursal (
-    id_sucursal NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_sucursal NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre_facturacion varchar2(50) not null,
     id_canton number not null,
      CONSTRAINT fk_canton FOREIGN KEY (id_canton) REFERENCES Cantones(ID_Canton)
 );
 
 create table empleado (
-    id_empleado NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_empleado NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar2(30) not null,
     apellido varchar2(30) not null,
     anio_nacimiento number not null,
@@ -27,26 +27,26 @@ create table empleado (
     CONSTRAINT fk_sucursal FOREIGN KEY (id_sucursal) REFERENCES sucursal(id_sucursal));
     
 create table cliente (
-    id_cliente NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_cliente NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar2(50) not null,
     cedula number not null);
     
 create table proveedor (
-     id_proveedor NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+     id_proveedor NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
      nombre varchar2(50) not null, 
      id_canton number not null,
      CONSTRAINT fk_cantones FOREIGN KEY (id_canton) REFERENCES cantones(id_canton));
      
      
 create table producto (
-    id_producto NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_producto NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar2(50) not null,
     cantidad number not null,
     precio number not null);
 
 
 create table factura_venta (
-    id_factura NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_factura NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     fecha date not null,
     id_empleado number not null,
     id_sucursal number not null,
@@ -74,6 +74,6 @@ create table usuarios (
 
 
 create table bitacora (
-    id_bitacora NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_bitacora NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     fecha_hora TIMESTAMP not null,
     precio_anterior number not null);
