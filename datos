@@ -17,6 +17,18 @@ insert into producto (nombre, cantidad, precio) values ('Manzana', 30, 500);
 insert into producto (nombre, cantidad, precio) values ('Coca-Cola', 25, 1200);
 insert into producto (nombre, cantidad, precio) values ('Sandia', 5, 1500);
 insert into producto (nombre, cantidad, precio) values ('Pan Molido', 20, 700);
+insert into producto (nombre, cantidad, precio) values ('Pan Cuadrado', 15, 3000);
+insert into producto (nombre, cantidad, precio) values ('Fideos', 14, 1000);
+insert into producto (nombre, cantidad, precio) values ('Mc´nCheese', 12, 1750);
+insert into producto (nombre, cantidad, precio) values ('Pasta', 25, 2500);
+insert into producto (nombre, cantidad, precio) values ('Papas Tostadas', 19, 1100);
+insert into producto (nombre, cantidad, precio) values ('Cornflakes', 20, 3000);
+insert into producto (nombre, cantidad, precio) values ('Atun', 15, 1500);
+insert into producto (nombre, cantidad, precio) values ('Salsa de tomate', 13, 1600);
+insert into producto (nombre, cantidad, precio) values ('Salsa Lizano', 15, 1700);
+insert into producto (nombre, cantidad, precio) values ('Frescoleche de fresa', 15, 400);
+insert into producto (nombre, cantidad, precio) values ('Frescoleche de  chocolate', 8, 400);
+insert into producto (nombre, cantidad, precio) values ('Frescoleche de vainilla', 20, 400);
 
 
 insert into cantones (nombre, id_provincia) values ('Poás', 1);
@@ -54,3 +66,26 @@ insert into cantones (nombre, id_provincia) values ('Alvarado', 7);
 insert into cantones (nombre, id_provincia) values ('Cartago', 7);
 insert into cantones (nombre, id_provincia) values ('El Guarco', 7);
 insert into cantones (nombre, id_provincia) values ('Jimenez', 7);
+
+
+insert into proveedor (nombre, id_canton) values ('Coca-Cola Company', 1);
+insert into proveedor (nombre, id_canton) values ('Pastas Roma', 2);
+insert into proveedor (nombre, id_canton) values ('Dos Pinos', 3);
+insert into proveedor (nombre, id_canton) values ('Pozuelo', 4);
+insert into proveedor (nombre, id_canton) values ('Downey Company', 5);
+insert into proveedor (nombre, id_canton) values ('Oreo Company', 6);
+insert into proveedor (nombre, id_canton) values ('Verdureria Zamora', 7);
+insert into proveedor (nombre, id_canton) values ('Fruteria Oviedo', 8);
+insert into proveedor (nombre, id_canton) values ('Pan Bollito', 9);
+insert into proveedor (nombre, id_canton) values ('Pan Bimbo', 10);
+insert into proveedor (nombre, id_canton) values ('Alimentos Jack´s', 11);
+insert into proveedor (nombre, id_canton) values ('InFood', 12);
+insert into proveedor (nombre, id_canton) values ('Irazú', 13);
+insert into proveedor (nombre, id_canton) values ('Ancyfer', 14);
+insert into proveedor (nombre, id_canton) values ('PamPa', 15);
+insert into proveedor (nombre, id_canton) values ('Alpiste', 16);
+insert into proveedor (nombre, id_canton) values ('Isleña', 17);
+insert into proveedor (nombre, id_canton) values ('Sardimar', 18);
+insert into proveedor (nombre, id_canton) values ('Lizano', 19);
+insert into proveedor (nombre, id_canton) values ('Nestle', 20);
+insert into proveedor (nombre, id_canton) values ('Lay´s', 21);
