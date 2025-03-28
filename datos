@@ -171,3 +171,16 @@ insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) va
 insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Fatima', 'Solís', 2008, 342314526,19);
 insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Fabricio', 'Gallece', 2007, 8962416,26);
 insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Natalia', 'Jimenez', 2007, 54638299,29);
+
+
+
+insert into cliente (nombre, cedula) values ('Daniel Zumbado', 35263828);
+insert into cliente (nombre, cedula) values ('Zara Molina', 12267819);
+insert into cliente (nombre, cedula) values ('Mariana Gonzales', 42517272);
+insert into cliente (nombre, cedula) values ('Gabriela Murillo', 1781836);
+insert into cliente (nombre, cedula) values ('Sebastian Murillo', 362729191);
+insert into cliente (nombre, cedula) values ('Justin Murillo', 927371628);
+insert into cliente (nombre, cedula) values ('Zara Chavez', 72836252);
+insert into cliente (nombre, cedula) values ('Rebeka Murillo', 5212882);
+insert into cliente (nombre, cedula) values ('Josue Quintana', 829103928);
+insert into cliente (nombre, cedula) values ('Joseph Perez', 7829382);
