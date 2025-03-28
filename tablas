@@ -43,7 +43,8 @@ create table producto (
     nombre varchar2(50) not null,
     cantidad number not null,
     precio number not null);
-    
+
+
 create table factura_venta (
     id_factura NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     fecha date not null,
