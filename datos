@@ -152,3 +152,22 @@ insert into proveedor_producto (id_producto, id_proveedor) values (20, 3);
 insert into proveedor_producto (id_producto, id_proveedor) values (21, 3);
 insert into proveedor_producto (id_producto, id_proveedor) values (22, 3);
 
+
+
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Fabian', 'Gutierres', 2005, 11783264,7);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Sebastian', 'Jimenez', 2005, 119370862,9);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Thomas', 'Viquez', 2004, 1123451662,26);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Carlos', 'Navarro', 2005, 66271557,6);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Daniel', 'Zamora', 2003, 2314415,3);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Santiago', 'Chacon', 2003, 118940573,21);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Jose', 'Ramirez', 2005, 5662739,22);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Ariana', 'Jimenez', 2005, 23144518,23);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Eduardo', 'Artavia', 2005, 87544368,31);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Catalina', 'Alacazar', 2004, 5433578,1);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Emmanuelle', 'Martin', 2005, 734425168,1);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Libertad', 'Ardon', 2005, 241553728,18);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Sofia', 'Rodriguez', 2002, 442315628,17);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Laura', 'Gomez', 2007, 677192,2);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Fatima', 'Solís', 2008, 342314526,19);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Fabricio', 'Gallece', 2007, 8962416,26);
+insert into empleado (nombre, apellido, anio_nacimiento, cedula, id_sucursal) values ('Natalia', 'Jimenez', 2007, 54638299,29);
