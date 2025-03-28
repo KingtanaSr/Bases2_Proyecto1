@@ -89,3 +89,41 @@ insert into proveedor (nombre, id_canton) values ('Sardimar', 18);
 insert into proveedor (nombre, id_canton) values ('Lizano', 19);
 insert into proveedor (nombre, id_canton) values ('Nestle', 20);
 insert into proveedor (nombre, id_canton) values ('Lay´s', 21);
+
+
+
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Poas', 1);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Grecia', 2);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Naranjo', 3);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Sarchi', 4);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de San Ramon', 5);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de San Carlos', 6);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Alajuela', 7);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Heredia', 8);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de San Joaquin', 9);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Barva', 10);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Flores', 11);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de San Isidro', 12);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Liberia', 13);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Nicoya', 14);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Santa Cruz', 15);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Bagaces', 16);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Carrillo', 17);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Cañas', 18);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Guacimo', 19
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Limon', 20);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Matina', 21);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Pococi', 22);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Escazu', 23);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Desamparados', 24);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Puriscal', 25);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de San Pedro de Montes de Oca', 26);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Curridabat', 27);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Garabito', 28);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Esparza', 29);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Buenos Aires', 30);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Osa', 31);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Alvarado', 32);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Cartago', 33);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de El Guarco', 34);
+insert into sucursal (nombre_facturacion, id_canton) values ('Dali de Jimenez', 35);
