@@ -230,3 +230,8 @@ insert into factura_venta (fecha, id_empleado, id_sucursal, id_cliente) values (
 insert into factura_venta (fecha, id_empleado, id_sucursal, id_cliente) values (TO_DATE('2025-01-30', 'YYYY-MM-DD'), 12, 18, 9);
 insert into factura_venta (fecha, id_empleado, id_sucursal, id_cliente) values (TO_DATE('2025-09-21', 'YYYY-MM-DD'), 12, 18, 10);
 insert into factura_venta (fecha, id_empleado, id_sucursal, id_cliente) values (TO_DATE('2025-04-07', 'YYYY-MM-DD'), 17, 29, 3);
+
+insert into USUARIOS (NOMBRE_USUARIO, CONTRASEÑA) values ('BryanJH', 'CS728356');
+insert into USUARIOS (NOMBRE_USUARIO, CONTRASEÑA) values ('RebeM', 'CS521288');
+insert into USUARIOS (NOMBRE_USUARIO, CONTRASEÑA) values ('Quintana', 'CS829103');
+insert into USUARIOS (NOMBRE_USUARIO, CONTRASEÑA) values ('AnaM', 'CS782938');
