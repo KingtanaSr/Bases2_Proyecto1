@@ -1,0 +1,27 @@
+.client-list-container {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .view-button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .client-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .client-list li {
+    margin-bottom: 10px;
+    background-color: #481261;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

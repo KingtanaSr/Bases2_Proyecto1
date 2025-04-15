@@ -1,0 +1,27 @@
+/* Estilos del botón para borrar publicaciones. */
+.delete-button {
+    position: absolute;
+    right: 265px; 
+    top: 520px; 
+    padding: 40px 32px;
+    background-color: #466720;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .delete-button:hover {
+    background-color: #206731;
+  }
+
+  .basic-form input {
+    position: absolute;
+    right: 250px; 
+    top: 640px; 
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    gap: 10px; 
+  }
