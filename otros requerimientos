@@ -12,3 +12,59 @@ begin
     end if;
 end;
 /
+
+
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE PACKAGE paquete_consultas AS 
+    FUNCTION total_ventas_sucursal (nombre_sucursal IN VARCHAR2) RETURN NUMBER;
+    FUNCTION Cant_producto(nombre_producto IN VARCHAR2) RETURN NUMBER;
+END paquete_consultas;
+/
+
+CREATE OR REPLACE PACKAGE BODY paquete_consultas AS
+
+    FUNCTION total_ventas_sucursal(nombre_sucursal IN VARCHAR2) RETURN NUMBER IS
+        total NUMBER := 0;
+    BEGIN 
+        SELECT COUNT(id_factura)
+        INTO total
+        FROM sucursal s 
+        LEFT JOIN factura_venta fv ON fv.id_sucursal = s.id_sucursal
+        WHERE s.nombre_facturacion = nombre_sucursal;
+
+        RETURN total;
+
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RETURN 0;
+    END total_ventas_sucursal;
+
+    FUNCTION Cant_producto(nombre_producto IN VARCHAR2) RETURN NUMBER IS
+        total_productos  NUMBER := 0;
+        total_vendidos   NUMBER := 0;
+        total_total      NUMBER := 0;
+    BEGIN 
+        SELECT cantidad
+        INTO total_productos
+        FROM producto
+        WHERE nombre = nombre_producto;
+
+        SELECT SUM(fp.cantidad)
+        INTO total_vendidos
+        FROM fact_producto fp
+        JOIN producto p ON fp.id_producto = p.id_producto
+        WHERE p.nombre = nombre_producto;
+
+        total_total := total_productos - total_vendidos;
+        if total_total<0 then return 0;
+        end if;
+        RETURN total_total;
+
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RETURN 0;
+    END Cant_producto;
+
+END paquete_consultas;
+/
