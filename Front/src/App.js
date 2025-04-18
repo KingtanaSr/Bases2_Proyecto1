@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import logo from './Assets/logo.svg';
 import logoTEC from './Assets/logo tec.png';
 import './App.css';
@@ -7,32 +8,51 @@ import Button3 from './Components/Button3';
 import ListaPublicaciones from './Components/ListaPublicaciones';
 import ListaColecciones from './Components/ListaColecciones';
 import Button4 from './Components/Button4';
-
-/* Es el componente principal de la aplicación, se importan
-los distintos componentes que se van a utilizar, se organiza
-la visualización de los distintos elementos con los que el 
-usuario va a interactuar.*/
+import Login from './Components/Login'; // Asegúrate de que Login esté en esta carpeta
 
 function App() {
+  const [usuario, setUsuario] = useState(null); // Estado para saber si hay sesión iniciada
+
+  // Si no hay sesión, mostramos el login
+  if (!usuario) {
+    return (
+      <div className="App">
+        <header className="App-header">
+        <img src={logoTEC} className="logo-tec-login" alt="logoTEC" />
+          <h2>Inicio de Sesión</h2>
+          <Login setUsuario={setUsuario} />
+        </header>
+      </div>
+    );
+  }
+
+  // Si hay sesión, mostramos la interfaz principal
+// Si hay sesión, mostramos la interfaz principal
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        
         <img src={logoTEC} className="logo-tec" alt="logoTEC" />
-        <h2>PROYECTO 1 BD2</h2>
+        <h2>PROYECTO 1 BD2 - Bienvenido, {usuario}</h2>
+
+      {/* Botón de cerrar sesión */}
+      <button
+        className="logout-button"
+        type="button"
+        onClick={() => setUsuario(null)}
+      >
+        Cerrar sesión
+      </button>
+
         <div className="button-container">
           <Button2 />
           <Button1 />
           <Button3 />
         </div>
-
-        {/* Listas de publicaciones y colecciones */}
-        <ListaPublicaciones />
         <Button4 />
       </header>
     </div>
   );
 }
-
 
 export default App;
