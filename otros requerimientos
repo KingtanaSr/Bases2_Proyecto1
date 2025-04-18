@@ -19,6 +19,7 @@ SET SERVEROUTPUT ON;
 CREATE OR REPLACE PACKAGE paquete_consultas AS 
     FUNCTION total_ventas_sucursal (nombre_sucursal IN VARCHAR2) RETURN NUMBER;
     FUNCTION Cant_producto(nombre_producto IN VARCHAR2) RETURN NUMBER;
+    procedure total_ventas_empleado (nombre varchar2);
 END paquete_consultas;
 /
 
@@ -65,6 +66,17 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas AS
         WHEN NO_DATA_FOUND THEN
             RETURN 0;
     END Cant_producto;
+    
+    PROCEDURE total_ventas_empleado (nombre varchar2) IS 
+        total number:=0;
+		BEGIN 
+            select count(fv.id_factura) into total
+            from empleado e
+            left join sucursal s on e.id_sucursal = s.id_sucursal
+            left join factura_venta fv on  s.id_sucursal =  fv.id_sucursal
+            where nombre = e.nombre;
+			DBMS_OUTPUT.Put_Line('El total de ventas de ' || nombre || ' son ' || total);
+		END;
 
 END paquete_consultas;
 /
