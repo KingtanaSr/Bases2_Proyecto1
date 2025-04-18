@@ -8,7 +8,7 @@ import Button3 from './Components/Button3';
 import ListaPublicaciones from './Components/ListaPublicaciones';
 import ListaColecciones from './Components/ListaColecciones';
 import Button4 from './Components/Button4';
-import Login from './Components/Login'; // Asegúrate de que Login esté en esta carpeta
+import Login from './Components/Login'; 
 
 function App() {
   const [usuario, setUsuario] = useState(null); // Estado para saber si hay sesión iniciada
@@ -26,7 +26,7 @@ function App() {
     );
   }
 
-  // Si hay sesión, mostramos la interfaz principal
+  
 // Si hay sesión, mostramos la interfaz principal
   return (
     <div className="App">
