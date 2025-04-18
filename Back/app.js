@@ -1,11 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const clientRoutes = require('./routes/clientRoutes');
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/crearUsuarioRoutes');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api', clientRoutes);
+app.use('/api', authRoutes);
+app.use('/api', userRoutes)
 
 const PORT = 5000;
 app.listen(PORT, () => {
