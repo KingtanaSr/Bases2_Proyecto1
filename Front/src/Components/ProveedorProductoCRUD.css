@@ -1,0 +1,184 @@
+/* Estilos del botón crear. */
+.crud-button {
+    position: absolute;
+    top: 520px;
+    padding: 40px 32px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .create-button {
+    left: 258px;
+    background-color: #4c2067;
+    width: 165px;
+    height: 90px;
+  }
+  
+  .create-button:hover {
+    background-color: #b331db;
+  }
+  
+  /* Estilos de los campos de texto */
+  form {
+    position: absolute;
+    left: 190px;
+    top: 640px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  /* Estilos del botón para el submit en el formulario */
+  button[type="submit"] {
+    padding: 10px;
+    background-color: #4c2067;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #b331db;
+  }
+  
+  /* Estilos del botón modificar. */
+  .modify-button {
+    justify-content: center;
+    align-items: center;
+    left: 43.5%;
+    margin-top: -250px;
+    padding: 40px 20px;
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modify-button:hover {
+    background-color: #21a1f1;
+  }
+  
+  /* Contenedor para el formulario de modificación */
+  .modify-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    gap: 5px; 
+    margin-top: -325px;
+  }
+  
+  /* Estilos del botón para borrar. */
+  .delete-button {
+    right: 265px;
+    background-color: #466720;
+  }
+  
+  .delete-button:hover {
+    background-color: #206731;
+  }
+  
+  /* Estilos para el formulario de eliminar */
+  .select-relacion {
+    position: absolute;
+    right: 270px; 
+    top: 640px; 
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    gap: 10px; 
+  }
+
+  
+  
+  /* Estilos de la vista de relaciones */
+  .pp-list-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pp-centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pp-view-button {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .pp-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  .pp-list li {
+    background-color: #481261;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+    margin-bottom: 6px;
+    font-size: 14px; 
+    line-height: 1.3;
+    position: relative;
+    top: 20px; 
+  }
+  
+  /* Estilos del formulario de creación */
+  .create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .create-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .create-form button {
+    padding: 10px;
+    background-color: #4c2067;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .create-form button:hover {
+    background-color: #b331db;
+  }
+  
+  

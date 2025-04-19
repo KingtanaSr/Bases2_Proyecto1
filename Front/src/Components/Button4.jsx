@@ -4,18 +4,11 @@ import './Button4.css';
 const Button4 = () => {
   const [clientes, setClientes] = useState([]);
   const [showList, setShowList] = useState(false);
-  const [datosCargados, setDatosCargados] = useState(false); // Para no volver a hacer el fetch
 
   const handleFetchClients = async () => {
     // Si ya se mostró la lista, al presionar de nuevo la ocultamos
     if (showList) {
       setShowList(false);
-      return;
-    }
-
-    // Si ya se cargaron los datos, solo mostramos la lista
-    if (datosCargados) {
-      setShowList(true);
       return;
     }
 
@@ -28,7 +21,6 @@ const Button4 = () => {
       const data = await response.json();
       console.log('Clientes recibidos:', data);
       setClientes(data);
-      setDatosCargados(true); // Marcamos que ya tenemos los datos
       setShowList(true); // Mostramos la lista
     } catch (error) {
       console.error('Error obteniendo clientes:', error);

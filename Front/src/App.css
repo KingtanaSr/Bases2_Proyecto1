@@ -120,6 +120,13 @@
   margin-bottom: 50px;
 }
 
+.nav-buttons {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  font-size: 25px;
+}
 
 @keyframes App-logo-spin {
   from {

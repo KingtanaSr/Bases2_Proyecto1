@@ -10,15 +10,17 @@
 }
 
 .view-button {
-  padding: 10px 15px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  position: relative;
-  top: -900px; 
+  justify-content: center;
+    align-items: center;
+    left: 43.5%;
+    margin-top: -210px; 
+    padding: 40px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .client-list {
@@ -41,6 +43,5 @@
   font-size: 14px; 
   line-height: 1.3;
   position: relative;
-  top: -300px; 
+  top: 50px; 
 }
-  
