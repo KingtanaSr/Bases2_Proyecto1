@@ -80,3 +80,75 @@ CREATE OR REPLACE PACKAGE BODY paquete_consultas AS
 
 END paquete_consultas;
 /
+
+
+CREATE OR REPLACE PACKAGE paquete_modificaciones AS 
+    PROCEDURE mod_empleado_sucursal(nombre_empleado VARCHAR2, nombre_sucursal VARCHAR2);
+    PROCEDURE mod_Cant_producto(nombre_producto VARCHAR2, cantidad_producto NUMBER);
+    FUNCTION actualizar_precio_prod(nombre_producto IN VARCHAR2, precio_nuevo IN NUMBER) RETURN NUMBER;
+END paquete_modificaciones;
+/
+
+CREATE OR REPLACE PACKAGE BODY paquete_modificaciones AS
+
+    PROCEDURE mod_empleado_sucursal(nombre_empleado VARCHAR2, nombre_sucursal VARCHAR2) IS 
+        id_emp NUMBER;
+        id_suc NUMBER;
+    BEGIN 
+        SELECT id_empleado INTO id_emp
+        FROM empleado
+        WHERE nombre = nombre_empleado;
+
+        SELECT id_sucursal INTO id_suc
+        FROM sucursal
+        WHERE nombre_facturacion = nombre_sucursal;
+
+        UPDATE empleado
+        SET id_sucursal = id_suc
+        WHERE id_empleado = id_emp;
+
+        DBMS_OUTPUT.PUT_LINE('La sucursal del empleado ' || nombre_empleado || ' se ha actualizado.');
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('No se encontró el empleado o la sucursal especificados.');
+    END mod_empleado_sucursal;
+
+    PROCEDURE mod_Cant_producto(nombre_producto VARCHAR2, cantidad_producto NUMBER) IS 
+        total_actual NUMBER;
+        total_nuevo NUMBER;
+    BEGIN 
+        SELECT cantidad INTO total_actual
+        FROM producto
+        WHERE nombre = nombre_producto;
+
+        total_nuevo := total_actual + cantidad_producto;
+
+        UPDATE producto
+        SET cantidad = total_nuevo
+        WHERE nombre = nombre_producto;
+
+        DBMS_OUTPUT.PUT_LINE('La nueva cantidad del producto ' || nombre_producto || ' es ' || total_nuevo || '.');
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('No se encontró el producto especificado.');
+    END mod_Cant_producto;
+    
+    FUNCTION actualizar_precio_prod(nombre_producto IN VARCHAR2, precio_nuevo IN NUMBER) RETURN NUMBER IS
+        precio_anterior number:=0;
+    BEGIN  
+        select precio into precio_anterior
+        from producto
+        where nombre = nombre_producto;
+        UPDATE producto
+        SET precio = precio_nuevo
+        WHERE nombre = nombre_producto;
+        DBMS_OUTPUT.PUT_LINE('Se actualizo correctamente el precio del producto');
+        return precio_anterior;
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Ocurrió un error al actualizar el precio del producto.');
+            RETURN 0;
+    END actualizar_precio_prod;
+
+END paquete_modificaciones;
+/
