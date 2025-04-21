@@ -70,7 +70,7 @@ router.get('/relaciones-proveedor-producto', async (req, res) => {
 // CRUD relaciones
 router.post('/proveedor-producto', insertProveedorProducto);
 router.get('/proveedor-productos', getProveedorProducto);
-router.put('/proveedor-producto/:id_producto/:id_proveedor', updateProveedorProducto);
+router.put('/proveedor-producto-update/:id_producto/:id_proveedor', updateProveedorProducto);
 router.delete('/proveedor-producto/:id_producto/:id_proveedor', deleteProveedorProducto);
 
 module.exports = router;
