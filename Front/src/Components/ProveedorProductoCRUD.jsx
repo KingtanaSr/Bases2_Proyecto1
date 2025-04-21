@@ -72,23 +72,58 @@ const ProveedorProductoCRUD = () => {
   };
 
   // Modificar
-  const [modCedula, setModCedula] = useState('');
+  const [formData1, setFormData1] = useState({ proveedor_id: '', producto_id: '' });
+  const [relaciones1, setRelaciones1] = useState([]);
+  const [relacionSeleccionada1, setRelacionSeleccionada1] = useState(null);
   const [columna, setColumna] = useState('');
   const [nuevoDato, setNuevoDato] = useState('');
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resRelaciones = await fetch('http://localhost:5000/api/relaciones-proveedor-producto');
+        const dataRelaciones = await resRelaciones.json();
+        setRelaciones1(dataRelaciones);
+      } catch (err) {
+        alert('Error al cargar las relaciones');
+      }
+    };
+  
+    fetchData();
+  }, []);
+
+  const handleChange1 = (e) => {
+    const [proveedor_id, producto_id] = e.target.value.split('-');
+    setFormData1({ proveedor_id, producto_id });
+    setRelacionSeleccionada1({ proveedor_id, producto_id });
+  };
+
   const handleModify = async () => {
+    if (!relacionSeleccionada1) {
+      alert('Debe seleccionar una relación primero');
+      return;
+    }
+  
     try {
-      const response = await fetch(`http://localhost:5000/api/proveedor-producto/id/${modCedula}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ columna, nuevoDato }),
-      });
+      const { proveedor_id, producto_id } = relacionSeleccionada1;
+  
+      const response = await fetch(
+        `http://localhost:5000/api/proveedor-producto-update/${formData1.producto_id}/${formData1.proveedor_id}`,
+        {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ columna, nuevoDato }),
+        }
+      );
+  
       if (!response.ok) {
         const error = await response.json();
         throw new Error(error.message || 'Error en la modificación');
       }
+  
       alert('Relación modificada con éxito');
-      setModCedula('');
+      setFormData1({ proveedor_id: '', producto_id: '' });
+      setRelacionSeleccionada1(null);
       setColumna('');
       setNuevoDato('');
     } catch (error) {
@@ -97,15 +132,30 @@ const ProveedorProductoCRUD = () => {
   };
 
   // Eliminar
+  const [relaciones2, setRelaciones2] = useState([]);
   const [relacionSeleccionada, setRelacionSeleccionada] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resRelaciones = await fetch('http://localhost:5000/api/relaciones-proveedor-producto');
+        const dataRelaciones = await resRelaciones.json();
+        setRelaciones2(dataRelaciones);
+      } catch (err) {
+        alert('Error al cargar las relaciones');
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
   const handleDeleteRelacion = async () => {
     if (!relacionSeleccionada) {
       alert('Seleccione una relación primero');
       return;
     }
-    const { id_producto, id_proveedor } = relacionSeleccionada;
+    const { ID_PRODUCTO, ID_PROVEEDOR } = relacionSeleccionada;
     try {
-      const response = await fetch(`http://localhost:5000/api/proveedor-producto/${id_producto}/${id_proveedor}`, {
+      const response = await fetch(`http://localhost:5000/api/proveedor-producto/${ID_PRODUCTO}/${ID_PROVEEDOR}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -113,9 +163,9 @@ const ProveedorProductoCRUD = () => {
         throw new Error(error.error || 'Error al eliminar');
       }
       alert('Relación eliminada con éxito');
-      setRelaciones((prev) =>
+      setRelaciones2((prev) =>
         prev.filter(
-          (rel) => !(rel.id_producto === id_producto && rel.id_proveedor === id_proveedor)
+          (rel) => !(rel.ID_PRODUCTO === ID_PRODUCTO && rel.ID_PROVEEDOR === ID_PROVEEDOR)
         )
       );
       setRelacionSeleccionada(null);
@@ -123,6 +173,7 @@ const ProveedorProductoCRUD = () => {
       alert(`Error eliminando la relación: ${error.message}`);
     }
   };
+  
 
   return (
     <>
@@ -178,30 +229,59 @@ const ProveedorProductoCRUD = () => {
       
       {/* Modificar */}
       <div className="modify-form">
-        <input type="text" placeholder="ID relación" value={modCedula} onChange={(e) => setModCedula(e.target.value)} />
-        <input type="text" placeholder="Columna a modificar" value={columna} onChange={(e) => setColumna(e.target.value)} />
-        <input type="text" placeholder="Nuevo dato" value={nuevoDato} onChange={(e) => setNuevoDato(e.target.value)} />
-        <button className="modify-button" onClick={handleModify}>Modificar relación</button>
+        <div id="modify-form">
+          <button
+            className="modify-button1"
+            onClick={(e) => {e.preventDefault();handleModify();}}>
+            Modificar relación
+          </button>
+
+          <select
+            name="select-relacion"
+            value={`${formData1.proveedor_id}-${formData1.producto_id}`}
+            onChange={handleChange1}required>
+            <option value="">Seleccione una relación</option>
+            {relaciones1.map((p) => (
+              <option key={`${p.ID_PROVEEDOR}-${p.ID_PRODUCTO}`}
+                value={`${p.ID_PROVEEDOR}-${p.ID_PRODUCTO}`}
+              >
+                {p.NOMBRE_PROVEEDOR} - {p.NOMBRE_PRODUCTO}
+              </option>
+            ))}
+          </select>
+
+          <input
+            type="text"
+            placeholder="Columna a modificar"
+            value={columna}
+            onChange={(e) => setColumna(e.target.value)}
+          />
+
+          <input
+            type="text"
+            placeholder="Nuevo dato"
+            value={nuevoDato}
+            onChange={(e) => setNuevoDato(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Eliminar */}
       <div className="delete-form">
-      <select
+        <select
           className="select-relacion"
           value={relacionSeleccionada ? `${relacionSeleccionada.id_producto}-${relacionSeleccionada.id_proveedor}` : ''}
           onChange={(e) => {
-            const [id_producto, id_proveedor] = e.target.value.split('-');
-            const seleccionada = relaciones.find(
-              (rel) =>
-                rel.id_producto === id_producto &&
-                rel.id_proveedor === id_proveedor
+            const [id_producto, id_proveedor] = e.target.value.split('-').map(Number);
+            const seleccionada = relaciones2.find(
+              (rel) => rel.ID_PRODUCTO === id_producto && rel.ID_PROVEEDOR === id_proveedor
             );
             setRelacionSeleccionada(seleccionada);
           }}
         >
           <option value="">Seleccione una relación</option>
-          {relaciones.map((rel, idx) => (
-            <option key={idx} value={`${rel.id_producto}-${rel.id_proveedor}`}>
+          {relaciones2.map((rel, idx) => (
+            <option key={idx} value={`${rel.ID_PRODUCTO}-${rel.ID_PROVEEDOR}`}>
               {rel.NOMBRE_PRODUCTO} - {rel.NOMBRE_PROVEEDOR}
             </option>
           ))}

@@ -55,12 +55,26 @@
   }
   
   /* Estilos del botón modificar. */
-  .modify-button {
+  .modify-form {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    left: 43.5%;
-    margin-top: -250px;
-    padding: 40px 20px;
+    gap: 10px;
+    padding-top: 50px;
+  }
+  
+  #modify-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Botón de modificar */
+  .modify-button1 {
+    margin-top: 50px;
+    padding: 40px 32px;
     background-color: #61dafb;
     color: white;
     border: none;
@@ -71,17 +85,6 @@
   
   .modify-button:hover {
     background-color: #21a1f1;
-  }
-  
-  /* Contenedor para el formulario de modificación */
-  .modify-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    gap: 5px; 
-    margin-top: -325px;
   }
   
   /* Estilos del botón para borrar. */
