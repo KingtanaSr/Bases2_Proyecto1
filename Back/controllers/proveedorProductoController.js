@@ -41,6 +41,7 @@ const getProveedorProducto = async (req, res) => {
       }
     );
 
+    console.log('Datos obtenidos de la base de datos:', result.rows);
     await connection.close();
 
     res.json(result.rows);
@@ -53,7 +54,7 @@ const getProveedorProducto = async (req, res) => {
 const updateProveedorProducto = async (req, res) => {
     const { id_producto, id_proveedor } = req.params;
     const { columna, nuevoDato } = req.body;
-  
+    console.log('Modificando relación:', { id_producto, id_proveedor, columna, nuevoDato });
     // Validar que la columna sea permitida
     const columnasPermitidas = ['id_producto', 'id_proveedor'];
     if (!columnasPermitidas.includes(columna)) {
