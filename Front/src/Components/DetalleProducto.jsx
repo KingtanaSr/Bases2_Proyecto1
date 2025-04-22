@@ -50,7 +50,7 @@ const DetalleProducto = () => {
                 <td>{fila.PRODUCTO}</td>
                 <td>{fila.CANTIDAD}</td>
                 <td>{fila.CLIENTE}</td>
-                <td>{fila.NOMBRE_FACTURACION}</td>
+                <td>{fila.SUCURSAL}</td>
                 <td>{new Date(fila.FECHA).toLocaleDateString()}</td>
               </tr>
             ))}
